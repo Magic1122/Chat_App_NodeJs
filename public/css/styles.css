@@ -31,7 +31,7 @@ label {
     color: #777;
 }
 
-input {
+input, select {
     border: 1px solid #eeeeee;
     padding: 12px;
     outline: none;
@@ -81,6 +81,17 @@ button:disabled {
 .centered-form input {
     margin-bottom: 16px;
     width: 100%;
+}
+
+.centered-form select {
+    font-size: 14px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+
+.hidden-options {
+    visibility: hidden;
 }
 
 /* Chat Page Layout */

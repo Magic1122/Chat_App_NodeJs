@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/favicon.png">
-    <link rel="stylesheet" href="./css/styles.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/generatedropdown.js"></script>
     <title>Chat App</title>
 </head>
 
@@ -16,8 +17,12 @@
             <form action="/chat.html">
                 <label for="username">Display name</label>
                 <input type="text" id="username" name="username" placeholder="Display name" required>
-                <label for="room">Room</label>
+                <label for="room">Create a Room</label>
                 <input type="text" id="room" name="room" placeholder="Room" required>
+                <label for="existing-rooms" class="hidden-options">Existing Rooms</label>
+                <select class="hidden-options" id="existing-rooms" onchange="setRoomValue()">
+                    <option value="">Choose a room</option>
+                </select>
                 <button>Join</button>
             </form>
         </div>

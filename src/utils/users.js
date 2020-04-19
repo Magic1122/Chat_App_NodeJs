@@ -70,10 +70,22 @@ const getUsersInRoom = (room) => {
     return [] */
 }
 
+const getRooms = () => {
+    const rooms = []
+
+    users.map((user) => {
+        if (rooms.indexOf(user.room) == -1) {
+            rooms.push(user.room)
+        }
+    })
+    return rooms
+}
+
 
 module.exports = {
     addUser, 
     removeUser, 
     getUser, 
-    getUsersInRoom
+    getUsersInRoom, 
+    getRooms
 }

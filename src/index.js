@@ -4,7 +4,7 @@ const express = require('express')
 const socketio = require('socket.io')
 const Filter = require('bad-words')
 const { generateMessage, generateLocationMessage } = require('./utils/messages')     // we import generateMessage function to use it to generate messageOBJ
-const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users')
+const { addUser, removeUser, getUser, getUsersInRoom, getRooms } = require('./utils/users')
 
 const app = express()
 const server = http.createServer(app) // different express setup for Socket.IO
@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
     res.send(publicPath, 'index.html')
 })
 
+app.get('/rooms', async (req, res) => {
+    const rooms = await getRooms()
+    res.send(rooms)
+})
 
 
 io.on('connection', (socket) => { // we have access to socket as the first arguement

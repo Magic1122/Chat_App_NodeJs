@@ -9,6 +9,7 @@ const $messageFormInput = $messageForm.querySelector('input')
 const $messageFormButton = $messageForm.querySelector('button')
 const $shareLocationButton = document.getElementById('share-location')
 const $messages = document.getElementById('messages')
+const $existingRooms = document.getElementById('existing-rooms')
 
 // Templates
 const messageTemplate = document.getElementById('message-template').innerHTML  // to select the templates you need the innerHTML property
